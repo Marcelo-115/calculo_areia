@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculo de metragem de areia</title>
+	   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+            display: block;
+        }
+        input {
+            padding: 5px;
+            width: 100px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Média de Furos</h1>
+ 
+    <form id="formCalculo">
+        <!-- Inputs para os 6 valores de furos -->
+        <label for="furo1">Furo 1:</label>
+        <input type="number" id="furo1" step="any" required>
+
+        <label for="furo2">Furo 2:</label>
+        <input type="number" id="furo2" step="any" required>
+
+        <label for="furo3">Furo 3:</label>
+        <input type="number" id="furo3" step="any" required>
+
+        <label for="furo4">Furo 4:</label>
+        <input type="number" id="furo4" step="any" required>
+
+        <label for="furo5">Furo 5:</label>
+        <input type="number" id="furo5" step="any" required>
+
+        <label for="furo6">Furo 6:</label>
+        <input type="number" id="furo6" step="any" required>
+
+        <!-- Inputs para largura e comprimento -->
+        <label for="largura">Largura:</label>
+        <input type="number" id="largura" step="any" required>
+
+        <label for="comprimento">Comprimento:</label>
+        <input type="number" id="comprimento" step="any" required>
+
+        <button type="button" onclick="calcularResultado()">Calcular</button>
+    </form>
+
+    <!-- Área para exibir o resultado -->
+    <h2>Resultado:</h2>
+    <p id="resultado">---</p> <br>
+    <p id="resultado-to">---</p>
+
+    <script>
+        function calcularResultado() {
+            // Captura dos valores de furos
+            const furo1 = parseFloat(document.getElementById("furo1").value);
+            const furo2 = parseFloat(document.getElementById("furo2").value);
+            const furo3 = parseFloat(document.getElementById("furo3").value);
+            const furo4 = parseFloat(document.getElementById("furo4").value);
+            const furo5 = parseFloat(document.getElementById("furo5").value);
+            const furo6 = parseFloat(document.getElementById("furo6").value);
+
+            // Captura dos valores de largura e comprimento
+            const largura = parseFloat(document.getElementById("largura").value);
+            const comprimento = parseFloat(document.getElementById("comprimento").value);
+
+            // Cálculo da média dos furos
+            const media_furos = (furo1 + furo2 + furo3 + furo4 + furo5 + furo6) / 6;
+
+            // Cálculo final
+            const resultado_metro_cubico = media_furos * largura * comprimento;
+
+            const resultado_toneladas = resultado_metro_cubico * 1.5;
+
+            // Exibir o resultado formatado
+            document.getElementById("resultado").innerText = `O resultado em m3 é: ${resultado_metro_cubico.toFixed(2)}`;
+
+            document.getElementById("resultado-to").innerText = `O resultado em to é: ${resultado_toneladas.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
