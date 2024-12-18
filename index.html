@@ -15,6 +15,12 @@
             margin-bottom: 10px;
             display: block;
         }
+
+	.calculadoraCubagem{
+	width:700px;
+	margin: 20px auto;
+	}
+		   
         input {
             padding: 5px;
             width: 100px;
@@ -36,7 +42,7 @@
 </head>
 <body>
     <h1>Calculadora de Média de Furos</h1>
- 
+ <div class="calculadoraCubagem">
     <form id="formCalculo">
         <!-- Inputs para os 6 valores de furos -->
         <label for="furo1">Furo 1:</label>
@@ -66,7 +72,7 @@
 
         <button type="button" onclick="calcularResultado()">Calcular</button>
     </form>
-
+ </div>
     <!-- Área para exibir o resultado -->
     <h2>Resultado:</h2>
     <p id="resultado">---</p> <br>
