@@ -1,0 +1,55 @@
+/* CSS Responsivo */
+
+/* Configurações gerais para telas menores */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .calc-principal form {
+        text-align: left;
+        padding: 10px;
+    }
+
+    input, label {
+        width: 100%;
+        margin: 5px 0;
+        line-height: 25px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .justify-center {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Configurações para telas ainda menores */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    input {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
